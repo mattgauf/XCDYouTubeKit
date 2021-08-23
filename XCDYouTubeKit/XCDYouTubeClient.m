@@ -14,6 +14,8 @@
 
 @synthesize languageIdentifier = _languageIdentifier;
 
+static NSString * _innertubeApiKey = @"";
+
 + (instancetype) defaultClient
 {
 	static XCDYouTubeClient *defaultClient;
@@ -27,6 +29,15 @@
 - (instancetype) init
 {
 	return [self initWithLanguageIdentifier:nil];
+}
+
+
++ (NSString *)innertubeApiKey {
+	return _innertubeApiKey;
+}
+
++ (void)setInnertubeApiKey:(NSString *)key {
+	_innertubeApiKey = key;
 }
 
 - (instancetype) initWithLanguageIdentifier:(NSString *)languageIdentifier
